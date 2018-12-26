@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.marcuschiu.springboot</groupId>
+	<artifactId>graphql</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>graphql</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- this library maps GraphQL schemas automatically to Java objects -->
+		<!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java-tools -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-tools</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+
+		<!-- Included in graphql-spring-boot-starter dependency-->
+		<!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java -->
+		<!--<dependency>-->
+			<!--<groupId>com.graphql-java</groupId>-->
+			<!--<artifactId>graphql-java</artifactId>-->
+			<!--<version>6.0</version>-->
+		<!--</dependency>-->
+
+		<!-- Included in graphql-spring-boot-starter dependency -->
+		<!--
+		building a web application, you'll also want to use GraphQL Servlet, which implements
+		a servlet that supports GET and POST requests for GraphQL queries
+		-->
+		<!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java-servlet -->
+		<!--<dependency>-->
+			<!--<groupId>com.graphql-java</groupId>-->
+			<!--<artifactId>graphql-java-servlet</artifactId>-->
+			<!--<version>4.7.0</version>-->
+		<!--</dependency>-->
+
+		<!--
+		This starter will add and auto-configure a GraphQL Servlet at /graphql and use a GraphQL
+		schema library (like GraphQL Java Tools) to parse all the schema files found on the classpath.
+		Includes both:
+		- <artifactId>graphql-java</artifactId>
+		- <artifactId>graphql-java-servlet</artifactId>
+		-->
+		<!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-spring-boot-starter</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<!-- UI interface for consuming graphql APIs -->
+		<!-- https://mvnrepository.com/artifact/com.graphql-java/graphiql-spring-boot-starter -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- builtin MySQL database in RAM -->
+		<!-- http://localhost:8080/h2-console -->
+		<!-- replace fields: -->
+		<!-- JDBC url: jdbc:h2:mem:testdb -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- testing facilities -->
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>graphql-spring-boot-starter-test</artifactId>
+			<version>5.3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
